@@ -15,8 +15,8 @@ spec:
     targetRevision: 15.7.1
     helm:
       valueFiles:
-      - $values/charts/prometheus/values.yaml
-  - repoURL: 'https://github.com/test-argo/environment/values.yaml'
+      - $values/environment/values.yaml
+  - repoURL: 'https://github.com/bjunker99/test-argo.git'
     targetRevision: dev
     ref: values
   project: default
