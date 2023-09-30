@@ -17,7 +17,7 @@ spec:
       valueFiles:
       - $values/environment/values.yaml
   - repoURL: 'https://github.com/bjunker99/test-argo.git'
-    targetRevision: dev
+    targetRevision: HEAD
     ref: values
   project: default
   syncPolicy:
