@@ -16,9 +16,13 @@ spec:
     helm:
       valueFiles:
       - subenv://$values/environment/values.yaml
+      - subenv://$ref/environment/values.yaml
   - repoURL: 'https://github.com/bjunker99/test-argo.git'
     targetRevision: HEAD
     ref: values
+  - repoURL: 'https://github.com/bjunker99/test-argo-repo-2.git'
+    targetRevision: HEAD
+    ref: ref
   project: default
   syncPolicy:
     automated:
