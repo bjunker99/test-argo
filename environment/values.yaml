@@ -1,1 +1,2 @@
-value: value1
+server:
+  name: $TEST_SERVER_NAME
