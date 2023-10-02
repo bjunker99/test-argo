@@ -15,7 +15,6 @@ spec:
     targetRevision: 15.7.1
     helm:
       valueFiles:
-      - https://raw.githubusercontent.com/bjunker99/test-argo/main/environment/values.yaml
       - subenv://$values/environment/values.yaml
   - repoURL: 'https://github.com/bjunker99/test-argo.git'
     targetRevision: HEAD
