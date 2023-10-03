@@ -16,7 +16,7 @@ spec:
     helm:
       valueFiles:
       - subenv://$values/environment/values.yaml
-      - ref+sops://$ref/secrets/secrets.yaml
+      - secrets://$ref/secrets/secrets.yaml
   - repoURL: 'https://github.com/bjunker99/test-argo.git'
     targetRevision: HEAD
     ref: values
