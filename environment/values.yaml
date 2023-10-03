@@ -1,2 +1,2 @@
 server:
-  name: $TEST_SERVER_NAME
+  name: $AWS_EKS_CLUSTER_NAME
