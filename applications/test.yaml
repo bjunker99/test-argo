@@ -9,20 +9,10 @@ spec:
     name: ''
     namespace: example
     server: 'https://kubernetes.default.svc'
-  sources:
-  - repoURL: 'https://prometheus-community.github.io/helm-charts'
+  source:
+    repoURL: 'https://prometheus-community.github.io/helm-charts'
     chart: prometheus
     targetRevision: 15.7.1
-    helm:
-      valueFiles:
-      - subenv://$values/environment/values.yaml
-      - subenv+sops://$ref/secrets/secrets.yaml
-  - repoURL: 'https://github.com/bjunker99/test-argo.git'
-    targetRevision: HEAD
-    ref: values
-  - repoURL: 'https://github.com/bjunker99/test-argo-repo-2.git'
-    targetRevision: HEAD
-    ref: ref
   project: default
   syncPolicy:
     automated:
