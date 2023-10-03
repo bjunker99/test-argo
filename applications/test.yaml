@@ -5,7 +5,8 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  plugin: {}
+  plugin:
+    name: my-plugin
   destination:
     name: ''
     namespace: example
