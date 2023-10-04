@@ -11,7 +11,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   sources:
   - repoURL: https://github.com/bjunker99/test-argo.git
-    targetRevision: HEAD
+    targetRevision: test
     ref: valuesrepo
   - repoURL: 'https://prometheus-community.github.io/helm-charts'
     chart: prometheus
