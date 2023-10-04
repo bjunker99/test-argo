@@ -5,8 +5,6 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  plugin:
-    name: my-plugin-v1.0
   destination:
     name: ''
     namespace: example
@@ -15,6 +13,9 @@ spec:
     repoURL: 'https://prometheus-community.github.io/helm-charts'
     chart: prometheus
     targetRevision: 15.7.1
+    valueFiles:
+    - subenv://https://raw.githubusercontent.com/bjunker99/test-argo/main/environment/values.yaml
+    - subenv+sops://https://raw.githubusercontent.com/bjunker99/test-argo/main/secrets/secrets.yaml
   project: default
   syncPolicy:
     automated:
