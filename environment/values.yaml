@@ -1,2 +1,2 @@
 server:
-  name: $AWS_EKS_CLUSTER_NAME
+  name: $AWS_EKS_CLUSTER_NAME1
