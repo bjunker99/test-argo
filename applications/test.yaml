@@ -20,8 +20,8 @@ spec:
       valueFiles:
       - subenv://env-values.yaml
     from:
-      - sourcePath: "$valuesrepo/environment/values.yaml"
-        destinationPath: "env-values.yaml"  
+    - sourcePath: "$valuesrepo/environment/values.yaml"
+      destinationPath: "env-values.yaml"  
   project: default
   syncPolicy:
     automated:
