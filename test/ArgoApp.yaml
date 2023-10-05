@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  name: copyfrom-multibranch-test
+spec:
+  destination:
+    namespace: copyfrom-test
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+    - ref: envspec
+      repoURL: https://github.com/gczuczy/argocd-copyfrom-test-envs.git
+      targetRevision: main
+    - repoURL: https://github.com/gczuczy/argocd-copyfrom-test.git
+      targetRevision: main
+      path: ./
+      from:
+        - sourcePath: "$envspec/dev/configmap.yaml"
+          destinationPath: configmap.yaml
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
